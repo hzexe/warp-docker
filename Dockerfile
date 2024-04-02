@@ -11,7 +11,7 @@ RUN apt-get update && \
     apt-get install -y cloudflare-warp && \
     apt-get clean && \
     apt-get autoremove -y && \
-    wget -O gost.gz https://github.com/ginuerzh/gost/releases/download/v${GOST_VERSION}/gost-linux-arm64-${GOST_VERSION}.gz && \
+    wget -O gost.gz https://github.com/ginuerzh/gost/releases/download/v${GOST_VERSION}/gost-linux-armv8-${GOST_VERSION}.gz && \
     gunzip gost.gz && \
     mv gost-linux-amd64-${GOST_VERSION} /usr/bin/gost && \
     chmod +x /usr/bin/gost
