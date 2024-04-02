@@ -14,7 +14,7 @@ RUN apt-get update && \
     wget -O gost.gz https://github.com/ginuerzh/gost/releases/download/v${GOST_VERSION}/gost-linux-armv8-${GOST_VERSION}.gz && \
     gunzip gost.gz && \
     ls -l && \
-    mv gost-linux-*-${GOST_VERSION} /usr/bin/gost && \
+    mv gost /usr/bin/gost && \
     chmod +x /usr/bin/gost
 
 # Accept Cloudflare WARP TOS
