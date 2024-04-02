@@ -29,6 +29,12 @@ if [ ! -f /var/lib/cloudflare-warp/reg.json ]; then
         echo "License key found, registering license..."
         warp-cli set-license "$WARP_LICENSE_KEY" && echo "Warp license registered!"
     fi
+    # if a endpoint is provided,set tunnel endpoint
+    if [ -n "$WARP_ENDPOINT" ]; then
+        echo "Endpoint found"
+        warp-cli tunnel endpoint reset
+        warp-cli tunnel endpoint set "$WARP_ENDPOINT"
+    fi
     # connect to the warp server
     warp-cli connect
 else
